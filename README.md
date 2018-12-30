@@ -97,6 +97,13 @@ docker exec -it --user="www-data" symfony4basicskeleton_php_1 bin/console doctri
 
 where symfony4basicskeleton_php_1 php container name
 
+## XDEBUG
+set alias 10.254.254.254 to 127.0.0.1 network interface for XDEBUG
+```
+$ sudo ifconfig lo:0 10.254.254.254 up
+```
+
+
 ## URLs:
-"http://site.symfony4basicskeleton_local/" - website
+"http://site.symfony4basicskeleton_local/" - website<br>
 "http://adminer.symfony4basicskeleton_local:8080/" - adminer

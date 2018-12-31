@@ -92,7 +92,7 @@ docker exec -it --user 1000 symfony4basicskeleton_php_1 composer install
 
 run migrations
 ```
-docker exec -it --user="www-data" symfony4basicskeleton_php_1 bin/console doctrine:migrations:migrate
+docker exec -it --user 1000 symfony4basicskeleton_php_1 bin/console doctrine:migrations:migrate
 ```
 
 where symfony4basicskeleton_php_1 php container name
@@ -103,7 +103,29 @@ set alias 10.254.254.254 to 127.0.0.1 network interface for XDEBUG
 $ sudo ifconfig lo:0 10.254.254.254 up
 ```
 
-
 ## URLs:
 "http://site.symfony4basicskeleton_local/" - website<br>
 "http://adminer.symfony4basicskeleton_local:8080/" - adminer
+
+## Codeception 
+goto container
+```
+$ docker exec -it --user 1000 symfony4basicskeleton_php_1 bash
+$ cd codeception
+```
+run all tests
+```
+$ php ../vendor/bin/codecept run tests
+```
+run all tests under folder
+```
+$ php ../vendor/bin/codecept run tests/Api
+```
+run one test in debug mode
+```
+$ php ../vendor/bin/codecept run tests/Api/BaseApiCest.php --debug
+```
+build tester classes
+```
+$ php ../vendor/bin/codecept build
+```

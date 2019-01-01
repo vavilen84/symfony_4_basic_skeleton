@@ -44,6 +44,10 @@ RUN pecl install apcu && docker-php-ext-enable apcu
 RUN apt-get update && \
     apt-get install -y --no-install-recommends git zip unzip
 
+#composer fixes (exhausted memory error) - comment if not sure
+RUN touch /usr/local/etc/php/conf.d/memory_limit.ini \
+    && echo "memory_limit = 2000M;" >> /usr/local/etc/php/conf.d/memory_limit.ini
+
 #RUN curl --silent --show-error https://getcomposer.org/installer | php
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 

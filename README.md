@@ -123,7 +123,7 @@ $ php ../vendor/bin/codecept run tests/Api
 ```
 run one test in debug mode
 ```
-$ php ../vendor/bin/codecept run tests/Api/BaseApiCest.php --debug
+$ php ../vendor/bin/codecept run tests/Api/HelloFromTestCest.php --debug
 ```
 build tester classes
 ```
